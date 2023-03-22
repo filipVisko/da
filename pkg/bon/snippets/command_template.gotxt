@@ -1,0 +1,14 @@
+//go:embed snippets/command.md
+var commandDoc string
+
+var Cmd = &Z.Cmd{
+	Name:        "command",
+	Aliases:     []string{"cmd"},
+	Summary:     "a bonzai command",
+	Description: commandDoc,
+	Commands:    []*Z.Cmd{help.Cmd},
+	Call: func(method *Z.Cmd, args ...string) error {
+		// TODO
+		return nil
+	},
+}
